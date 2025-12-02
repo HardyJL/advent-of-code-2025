@@ -1,13 +1,14 @@
 def part_two(input: list[str]) -> int:
     amount = 0
-    for line in input:
+    total = len(input)
+    for curr, line in enumerate(input):
+        print(f"{curr} / {total}")
         lower, upper = line.split("-")
         for i in range(int(lower), int(upper) + 1):
             streval = str(i)
-            for j in range(1, len(streval)):
-                split_list = [streval[x : x + j] for x in range(0, len(streval), j)]
-                if len(set(split_list)) == 1:
-                    print(i)
+            for j in range(1, len(streval) // 2 + 1):
+                split_list = {streval[x : x + j] for x in range(0, len(streval), j)}
+                if len(split_list) <= 1:
                     amount += i
                     break
 
