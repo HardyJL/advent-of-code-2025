@@ -6,7 +6,7 @@ def update_base(base: int, val: int) -> int:
 def main():
     base = 50
     counter = 0
-    with open("day1/day1.txt") as file:
+    with open("day1/input.txt") as file:
         for line in file:
             direction = line[0]
             val = int(line[1:])

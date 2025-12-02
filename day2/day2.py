@@ -35,7 +35,7 @@ def part_one(input: list[str]) -> int:
 
 def main() -> None:
     line = ""
-    with open("day2/day2.txt") as file:
+    with open("day2/input.txt") as file:
         line = file.readline()
     lines = line.split(",")
     result = part_two(lines)
